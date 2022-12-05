@@ -1,6 +1,8 @@
 package com.foo.springfooproject;
 
 import models.Coder;
+import models.Pet;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,12 +17,19 @@ public class SpringFooProjectApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringFooProjectApplication.class, args);
 
+
+        //get data from annotation based injection
+        Pet pet1 = context.getBean(Pet.class);
+        pet1.dogInfo();
+
         //get from java annotation bean
         Coder coder = (Coder) context.getBean("setterInjCoder");
         Coder coder2 = (Coder) context.getBean("constructorInjCoder");
 
         //get from xml bean
 //        Coder coder2 = (Coder) context.getBean("coder2");
+
+
         System.out.println(coder2.getName());
         System.out.println(coder2.getLanguage());
         System.out.println(coder2.getComputer().getBrand());
