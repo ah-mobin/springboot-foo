@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    data set using-->
+    <!--    setter injection-->
+
+    <bean id="coder1" class="models.Coder">
+        <property name="id" value="1036"></property>
+        <property name="name" value="Mobin"></property>
+        <property name="language" value="Java"></property>
+        <property name="computer" ref="computer1"></property>
+    </bean>
+
+    <bean id="computer1" class="models.Computer">
+        <property name="brand" value="Intel"></property>
+    </bean>
+
+
+        data set using
+        constructor args injection
+
+    <bean id="coder2" class="models.Coder">
+        <constructor-arg index="0" value="1036"></constructor-arg>
+        <constructor-arg index="1" value="Abu Horaira"></constructor-arg>
+        <constructor-arg index="2" value="PHP"></constructor-arg>
+        <constructor-arg index="3" ref="computer2"></constructor-arg>
+    </bean>
+
+    <bean id="computer2" class="models.Computer">
+        <constructor-arg index="0" value="Intel"></constructor-arg>
+    </bean>
+
+</beans>
