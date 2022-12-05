@@ -13,7 +13,7 @@ public class SpringFooProjectApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringFooProjectApplication.class, args);
         Coder coder = (Coder) context.getBean("coder1");
-//        Coder coder2 = (Coder) context.getBean("coder2");
+        Coder coder2 = (Coder) context.getBean("coder2");
         System.out.println(coder.getName());
         System.out.println(coder.getLanguage());
         System.out.println(coder.getComputer().getBrand());
