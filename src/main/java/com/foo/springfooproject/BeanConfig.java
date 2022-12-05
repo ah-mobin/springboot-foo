@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfig {
 
     @Bean
-    public Coder setterInjCoder(@Qualifier("computerSetterBean") Computer computer){
+    public Coder setterInjCoder(@Qualifier("setterInjComputer") Computer computer){
         Coder coder = new Coder();
         coder.setId(1036);
         coder.setName("Abu Horaira");
@@ -20,7 +20,6 @@ public class BeanConfig {
     }
 
     @Bean
-    @Qualifier("computerSetterBean")
     public Computer setterInjComputer(){
         Computer computer = new Computer();
         computer.setBrand("AMD");
