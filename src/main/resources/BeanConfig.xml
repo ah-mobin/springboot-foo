@@ -18,8 +18,8 @@
     </bean>
 
 
-        data set using
-        constructor args injection
+<!--        data set using-->
+<!--        constructor args injection-->
 
     <bean id="coder2" class="models.Coder">
         <constructor-arg index="0" value="1036"></constructor-arg>
