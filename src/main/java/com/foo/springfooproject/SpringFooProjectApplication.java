@@ -14,7 +14,11 @@ public class SpringFooProjectApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(SpringFooProjectApplication.class, args);
+
+        //get from java annotation bean
         Coder coder = (Coder) context.getBean("setterInjCoder");
+
+        //get from xml bean
 //        Coder coder2 = (Coder) context.getBean("coder2");
         System.out.println(coder.getName());
         System.out.println(coder.getLanguage());
