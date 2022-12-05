@@ -26,5 +26,15 @@ public class BeanConfig {
         return computer;
     }
 
+    @Bean
+    public Coder constructorInjCoder(@Qualifier("constructorInjComputer") Computer computer){
+        return new Coder(1036, "Abu Horaira Mobin", "JavaScript", computer);
+    }
+
+    @Bean
+    public Computer constructorInjComputer(){
+        return new Computer("Intel");
+    }
+
 
 }

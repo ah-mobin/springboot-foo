@@ -17,12 +17,13 @@ public class SpringFooProjectApplication {
 
         //get from java annotation bean
         Coder coder = (Coder) context.getBean("setterInjCoder");
+        Coder coder2 = (Coder) context.getBean("constructorInjCoder");
 
         //get from xml bean
 //        Coder coder2 = (Coder) context.getBean("coder2");
-        System.out.println(coder.getName());
-        System.out.println(coder.getLanguage());
-        System.out.println(coder.getComputer().getBrand());
+        System.out.println(coder2.getName());
+        System.out.println(coder2.getLanguage());
+        System.out.println(coder2.getComputer().getBrand());
     }
 
 }
